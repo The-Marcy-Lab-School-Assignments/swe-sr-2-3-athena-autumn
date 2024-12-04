@@ -21,6 +21,25 @@ What is the difference between `justify-content` and `align-items` in Flexbox? H
 
 ### Response 2
 
+In Flexbox, there are built-in properties that allow us to vertically and horizontally align items. We must select our `flex-direction` first, either row, or column. The flex direction then dictates what the properties `justify-content` and `align-items` do.
+
+`justify-content` controls alignment of items on the main axis of the Flexbox. This axis will be the same as your `flex-direction`.
+
+`align-items` controls alignment of items on the cross axis. This axis is perpendicular to the `flex-direction`.
+
+For example, if I wanted to adjust a row of items to be aligned to the bottom right of the page, the code would look something like this:
+
+```css
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-items: end;
+  /* moves items to the right of screen */
+  align-items: end;
+  /* moves items to the bottom of screen */
+}
+```
+
 ## Prompt 3
 
 Describe the difference between `grid-template-areas` and `grid-template-columns`/`grid-template-rows`. When might you prefer one approach over the other?
