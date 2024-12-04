@@ -75,6 +75,23 @@ The other way to create grids using CSS is by using `grid-template-columns`/`gri
 Explain the `min-width` and `max-width` keywords in media queries. How do they help create responsive breakpoints for different screen sizes?
 
 ### Response 4
+> The `min-width` and `max-width` keywords in media queries are used to define **minimum** and **maximum** constraints for applying specific styles. They help create responsive breakpoints by targeting different screen sizes and adjusting the layout accordingly.
+> * `min-width`: applies styles when the viewpoint width is at least the specified value, often used for mobile first approach. Additional styles are applied as the screen size increases. 
+> * `max-width`: applies styles when the viewpoint width is no greater than the specified value, often used in desktop first approach, where styles for larger screens are defined first and scaled down for smaller devices. 
+>
+> Example 1 applies to styles to screens smaller than or equal to `1250px`: 
+> ```css
+> @media (max-width: 1250px) {
+>   /* ... */
+> }
+> ```
+> 
+> Example 2 applies styles to screens between `30em` and `50em` wide: 
+> ```css
+> @media (min-width: 30em) and (max-width: 50em) {
+>   /* ... */
+> }
+> ```
 
 ## Prompt 5
 
@@ -85,3 +102,38 @@ Imagine you are teaching a brief lesson on **mobile first design**. Your lesson 
 - An explanation of the code example.
 
 ### Response 5
+> **Mobile first design** is an approach where developers design websites starting with the smallest screens (mobile) and then progressively enhance the layout and functionality for larger screens like tablets and desktops.
+>
+> **Benefits of Mobile First Design:**
+> * It ensures the website is responsive, effective, and user-friendly on mobile devices, where most users access the web.
+> * The approach prioritizes core content and functionality, making it easier to build up features for larger screens without overloading the design.
+> * It enhances the user experience across devices, increasing website traffic and engagement.
+> 
+> **Example:**
+> ```css
+> /* Mobile styling */
+> .container {
+>   display: flex;
+>   flex-direction: column;
+>   gap: 10px;
+>   padding: 10 px;
+> }
+> 
+> .item {
+>   text-align: center;
+>   padding 20px;
+>   border: 1px solid;
+> }
+> 
+> /* Tablet and larger screens styling */
+> @media (min-width: 768px) {
+>   .container {
+>     flex-direction: row;
+>   }
+> }
+> ```
+> 
+> **Explanation:**
+> * In *mobile styling*, the `.container` uses flexbox with `flex-direction: column`, so the items are stacked vertically. A gap of `10px` adds spacing between items. 
+> * For *larger screens styling* with the minimum width of `768px`, the `@media` query applies when the screen width is at least `768px`. The `.container` switches to a horizontal layout, `flex-direction: row`, displaying items side by side.
+> This approach demonstrates how **mobile first design** prioritizes smaller devices and enhances the layout progressively as the screen size increases.
