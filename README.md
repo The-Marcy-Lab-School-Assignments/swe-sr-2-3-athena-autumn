@@ -46,6 +46,30 @@ Describe the difference between `grid-template-areas` and `grid-template-columns
 
 ### Response 3
 
+There are a few ways to create and size grids in CSS. The first way is using the `grid-template-areas` property. This property allows you to created named areas in a grid using **strings** (or words). The exact placement of these strings will create **defined containers** in the grid with those strings as labels.
+
+For example: this grid is a rough draft of the main elements of a webpage. Notice how there are no elements missing and a full grid is created. This is necessary when using this property.
+
+```css
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+```
+
+The other way to create grids using CSS is by using `grid-template-columns`/`grid-template-rows`. These properties allow for more **precise control** over specific sizing of each elements column/row size. It's good practice to use **fractional units** when defining the exact sizing of your columns/rows. This makes sure your elements are **proportional** to each other. Here is an example of how you would create a grid using these properties:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+}
+```
+
 ## Prompt 4
 
 Explain the `min-width` and `max-width` keywords in media queries. How do they help create responsive breakpoints for different screen sizes?
